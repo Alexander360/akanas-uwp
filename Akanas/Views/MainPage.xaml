@@ -6,25 +6,39 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
     xmlns:prismMvvm="using:Prism.Windows.Mvvm"
-    prismMvvm:ViewModelLocator.AutoWireViewModel="True" 
-    mc:Ignorable="d">
+    xmlns:conv="using:Akanas.Converters"
+    prismMvvm:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d"
+    Background="{x:Bind ViewModel.Background, Converter={StaticResource ColorToSolidColorBrush_ValueConverter}, Mode=TwoWay}">
+    <Page.Resources>
+        <conv:ColorToSolidColorBrushValueConverter x:Key="ColorToSolidColorBrush_ValueConverter" />
+    </Page.Resources>
     <Grid
-        x:Name="ContentArea"
-        Margin="{StaticResource MediumLeftRightMargin}">
+        x:Name="ContentArea">
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
+            <RowDefinition Height="32"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
         </Grid.RowDefinitions>
 
         <TextBlock
             Grid.Row="0"
-            x:Uid="Main_Title"
-            Style="{StaticResource PageTitleStyle}" />
+            Style="{StaticResource PageTitleStyle}"
+            Text="{x:Bind ViewModel.Title, Mode=TwoWay}"/>
+
         <Grid
-            Grid.Row="1" 
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
+            Grid.Row="1">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="{x:Bind ViewModel.Foreground, Converter={StaticResource ColorToSolidColorBrush_ValueConverter}, Mode=TwoWay}"
+                FontSize="64"
+                Text="{x:Bind ViewModel.TimerLabel, Mode=TwoWay}" />
         </Grid>
+
+        <Rectangle
+            Grid.Row="1"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="Transparent"
+            Tapped="Rectangle_Tapped"/>
     </Grid>
 </Page>

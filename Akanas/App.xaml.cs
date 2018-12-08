@@ -11,7 +11,9 @@ using Prism.Unity.Windows;
 using Prism.Windows.AppModel;
 
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.Resources;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 
 namespace Akanas
@@ -43,7 +45,33 @@ namespace Akanas
             NavigationService.Navigate(page, launchParam);
             Window.Current.Activate();
             Container.Resolve<IToastNotificationsService>().ShowToastNotificationSample();
+
+            // タイトルバーを拡張可能に
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+
+            // タイトル色を赤茄子に
+            this.SetTitleBarColorToAkanas();
+
             await Task.CompletedTask;
+        }
+
+        public void SetTitleBarColorToAkanas()
+        {
+            var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.BackgroundColor = Windows.UI.Colors.IndianRed;
+            titleBar.ButtonBackgroundColor = Windows.UI.Colors.IndianRed;
+            titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.IndianRed;
+            titleBar.ButtonInactiveForegroundColor = Windows.UI.Colors.White;
+        }
+
+        public void SetTitleBarColorToNas()
+        {
+            var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.BackgroundColor = Windows.UI.Colors.BlueViolet;
+            titleBar.ButtonBackgroundColor = Windows.UI.Colors.BlueViolet;
+            titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.BlueViolet;
+            titleBar.ButtonInactiveForegroundColor = Windows.UI.Colors.White;
         }
 
         protected override async Task OnActivateApplicationAsync(IActivatedEventArgs args)

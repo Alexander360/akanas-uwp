@@ -115,6 +115,7 @@
     </Compile>
     <Compile Include="BackgroundTasks\BackgroundTask.cs" />
     <Compile Include="BackgroundTasks\TimeCountingTask.cs" />
+    <Compile Include="Converters\ColorToSolidColorBrushValueConverter.cs" />
     <Compile Include="Helpers\TaskExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constants\PageTokens.cs" />
