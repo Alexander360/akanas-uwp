@@ -25,7 +25,6 @@ namespace Akanas.Converters
                 return new SolidColorBrush(color);
             }
             // You can support here more source types if you wish
-            // For the example I throw an exception
 
             Type type = value.GetType();
             throw new InvalidOperationException("Unsupported type [" + type.Name + "]");
@@ -44,7 +43,6 @@ namespace Akanas.Converters
                 return color.Color;
             }
             // You can support here more source types if you wish
-            // For the example I throw an exception
 
             Type type = value.GetType();
             throw new InvalidOperationException("Unsupported type [" + type.Name + "]");

@@ -58,19 +58,21 @@ namespace Akanas
 
         public void SetTitleBarColorToAkanas()
         {
+            var color = Windows.UI.Color.FromArgb(255, 252, 107, 92);
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
-            titleBar.BackgroundColor = Windows.UI.Colors.IndianRed;
-            titleBar.ButtonBackgroundColor = Windows.UI.Colors.IndianRed;
-            titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.IndianRed;
+            titleBar.BackgroundColor = color;
+            titleBar.ButtonBackgroundColor = color;
+            titleBar.ButtonInactiveBackgroundColor = color;
             titleBar.ButtonInactiveForegroundColor = Windows.UI.Colors.White;
         }
 
         public void SetTitleBarColorToNas()
         {
+            var color = Windows.UI.Color.FromArgb(255, 102, 128, 184);
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
-            titleBar.BackgroundColor = Windows.UI.Colors.BlueViolet;
-            titleBar.ButtonBackgroundColor = Windows.UI.Colors.BlueViolet;
-            titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.BlueViolet;
+            titleBar.BackgroundColor = color;
+            titleBar.ButtonBackgroundColor = color;
+            titleBar.ButtonInactiveBackgroundColor = color;
             titleBar.ButtonInactiveForegroundColor = Windows.UI.Colors.White;
         }
 

@@ -21,7 +21,7 @@ namespace Akanas.ViewModels
             set { this.SetProperty(ref this.foreground, value); }
         }
 
-        private Color background = Colors.IndianRed;
+        private Color background = Color.FromArgb(255, 252, 107, 92);
         public Color Background
         {
             get { return background; }
@@ -43,14 +43,14 @@ namespace Akanas.ViewModels
         {
             Title = "Akanas";
             Foreground = Colors.White;
-            Background = Colors.IndianRed;
+            Background = Color.FromArgb(255, 252, 107, 92);
         }
 
         public void SetThemeToNas()
         {
             Title = "nas";
             Foreground = Colors.White;
-            Background = Colors.BlueViolet;
+            Background = Color.FromArgb(255, 102, 128, 184);
         }
     }
 }
