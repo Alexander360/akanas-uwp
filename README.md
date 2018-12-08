@@ -1,4 +1,4 @@
-# Akanas for macOS
+# Akanas for Windows 10
 🍅Pomodoro timer app Akanas for Windows 10.
 
 Akanas (赤茄子) はポモドーロ・テクニックのためのタイマーアプリケーションです。
